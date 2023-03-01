@@ -1,0 +1,4 @@
+# Keyed Access Setup
+
+ssh-keygen -b 4096
+ssh-copy-id vagrant@[remote_ip]
