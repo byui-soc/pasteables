@@ -20,4 +20,12 @@ PS C:\\> Get-QADUser -CreatedAfter (GetDate).AddDays(-90)
 PS C:\\> Get-ADUser -Filter * -Properties whenCreated I Where-Object {$_.whenCreated -ge ((GetDate).AddDays(-90)).Date}
 
 
+
 ## Services
+sc query 
+sc config "service" start= disabled
+sc stop "service"
+wmic service where name='service' call ChangeStartmode Disabled
+
+## Passwords
+net user * /domain
